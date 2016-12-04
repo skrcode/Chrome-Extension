@@ -5,4 +5,5 @@ To run<br/>
 1. Load the src directory to Chrome Extensions in the Extensions menu in Google Chrome.<br/>
 2. Run "python myserver.py". Install any dependencies, if required.<br/>
 3. Go to "www.quora.com" and click on the Extension icon.<br/>
-4. Enjoy !<br/>
+4. Click on "Load Unsafe Scripts" from the URL bar<br/>
+5. Enjoy !<br/>
