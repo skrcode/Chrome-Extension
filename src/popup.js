@@ -1,22 +1,11 @@
-chrome.runtime.onMessage.addListener(function(request, sender) {
-  if (request.action == "getSource") {
-    message.innerText = request.source;
-  }
+// Inject the payload.js script into the current tab after the popout has loaded
+window.addEventListener('load', function (evt) {
+	chrome.extension.getBackgroundPage().chrome.tabs.executeScript(null, {
+		file: 'payload.js'
+	});;
 });
 
-function onWindowLoad() {
-
-  var message = document.querySelector('#message');
-
-  chrome.tabs.executeScript(null, {
-    file: "getPagesSource.js"
-  }, function() {
-    // If you try and inject into an extensions page or the webstore/NTP you'll get an error
-    if (chrome.runtime.lastError) {
-      message.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
-    }
-  });
-
-}
-
-window.onload = onWindowLoad;
+// Listen to messages from the payload.js script and write to popout.html
+chrome.runtime.onMessage.addListener(function (message) {
+	document.getElementById('pagetitle').innerHTML = message;
+});
