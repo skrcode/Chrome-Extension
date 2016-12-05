@@ -7,3 +7,7 @@ To run<br/>
 3. Go to "www.quora.com" and click on the Extension icon.<br/>
 4. Click on "Load Unsafe Scripts" from the URL bar<br/>
 5. Enjoy !<br/>
+
+
+Notes:<br/>
+The test data included contains data from the facebook page "Best-Of-Quora"<br/>
