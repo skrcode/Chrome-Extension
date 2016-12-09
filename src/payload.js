@@ -11,7 +11,15 @@ var sendData = function(answer) {
 	);
 	return JSON.parse(xhr.response).task.response
 }
-
+function httpGetObject(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    var htmlObject = document.createElement('div');
+	htmlObject.innerHTML = xmlHttp.response;
+    return htmlObject
+}
 
 var message = '';
 var q1 = document.getElementsByClassName('Answer');
@@ -23,7 +31,7 @@ for(var i = 0;i<q1.length;i+=4) {
 	q3 = q2[0].href
 	var m = ''
 	//get answer
-	a = q1[i].getElementsByClassName('rendered_qtext')
+	a = httpGetObject(q3).getElementsByClassName('rendered_qtext')
 	for(var j=a.length-1;j>=0;j--) {
 		var para_array = a[j].getElementsByClassName('qtext_para')
 		var answer = ''
