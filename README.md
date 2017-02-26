@@ -1,3 +1,4 @@
+Deprecated. New commit will be made soon to account for recent changes to www.quora.com<br/>
 Chrome Extension for Quora<br/>
 - Classifies Quora answers into genres such as information,stories and world affairs for improved reading experience<br/>
 <br/>

@@ -14,7 +14,8 @@ var sendData = function(answer) {
 function httpGetObject(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    
+    xmlHttp.open( "GET", theUrl, true ); // false for synchronous request
     xmlHttp.send( null );
     var htmlObject = document.createElement('div');
 	htmlObject.innerHTML = xmlHttp.response;
@@ -23,6 +24,7 @@ function httpGetObject(theUrl)
 
 var message = '';
 var q1 = document.getElementsByClassName('Answer');
+
 for(var i = 0;i<q1.length;i+=4) {
 	q2 = q1[i].getElementsByClassName('answer_permalink');
 
